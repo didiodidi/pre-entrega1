@@ -77,8 +77,21 @@ function mostrarTotal (total){
     alert("El total es de: $"+total);
 }
 
-const producto = arrayProductos.map((el) => el.stock)
-    alert (`El stock disponible es ${producto}`)
+//>------------>MAP<----------------//
+
+const producto = arrayProductos.map((el) => el.stock);
+    alert (`El stock disponible es ${producto}`);
+
+//------------->REDUCE<-------------//
+function mostrarStockFinal (){
+        const productoRetornado = arrayProductos.reduce((acc, el) => acc + el.stock, 0);
+        alert(`Usted tiene ${productoRetornado} productos restantes por comprar`);
+}
+
+
+
 
 crearCarrito();
 mostrarTotal(total);
+mostrarStockFinal();
+
